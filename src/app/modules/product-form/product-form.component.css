@@ -1,0 +1,132 @@
+.product-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+.form-header {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    padding: 1em 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 1em;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1em;
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    padding: .4em 0;
+}
+label {
+    font-size: .7em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: .6em;
+}
+input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: fit-content;
+    height: 30px;
+    padding-inline-start: 10px;
+    padding-inline-end: 10px;
+    font-size: .8em;
+}
+.error-message {
+    color: red;
+    font-size: .6em;
+    margin-top: .2em;
+    height: .6em;
+}
+button {
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    padding: 0 2em;
+    font-size: .8em;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 2em;
+    color: #333;
+}
+button.send {
+    background-color: rgb(243, 195, 64);
+}
+button[disabled] {
+    opacity: .5;
+}
+.error_message {
+    text-align: center;
+    font-size: .6em;
+    font-weight: bold;
+    color: red;
+}
+
+@media (max-width: 768px) {
+    .product-form {
+        padding: 0.5em;
+    }
+
+    .form-header {
+        font-size: 1.2em;
+    }
+
+    input {
+        font-size: .7em;
+    }
+
+    button {
+        font-size: .7em;
+    }
+
+    .error-message {
+        font-size: .5em;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-header {
+        font-size: 1em;
+    }
+
+    input {
+        font-size: .6em;
+    }
+
+    button {
+        font-size: .6em;
+        padding: 0 1.5em;
+    }
+
+    .error-message {
+        font-size: .4em;
+    }
+}

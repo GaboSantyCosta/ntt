@@ -1,0 +1,37 @@
+<div class="table_header">
+  <input [(ngModel)]="searchPrompt" type="text" placeholder="Search...">
+  <button class="add_btn" routerLink="/products/new">Agregar</button>
+</div>
+<div class="products_table">
+  <table>
+    <tr>
+      <th>Logo</th>
+      <th>Nombre del Producto</th>
+      <th>Descripción <app-icon src="circle-info"></app-icon></th>
+      <th>Fecha de liberación <app-icon src="circle-info"></app-icon></th>
+      <th colspan="2">Fecha de reestructuración <app-icon src="circle-info"></app-icon></th>
+    </tr>
+    <tr *ngFor="let product of products | productFilter: getSearchValue() | paginate: displayedProducts">
+      <td>
+        <div class="thumbnail">
+          <img [src]="product.logo" alt="logo">
+        </div>
+      </td>
+      <td>{{product.name}}</td>
+      <td>{{product.description}}</td>
+      <td>{{product.date_release | date: 'dd/MM/YYYY'}}</td>
+      <td>{{product.date_revision | date: 'dd/MM/YYYY'}}</td>
+      <td class="text-right"><app-icon src="trash" (click)="openMenu($event,product)"></app-icon></td>
+    </tr>
+  </table>
+  <app-context-menu *ngIf="selectedProduct" [x]="contextMenuX" [y]="contextMenuY" (edited)="handleEdit()" (deleted)="handleDelete()"></app-context-menu>
+  <app-modal *ngIf="modalIsOpen" (confirmed)="handleConfirm()" (canceled)="handleCancel()" [name]="selectedProduct!.name"></app-modal>
+</div>
+<div class="table_footer">
+  <div class="results">{{displayedProducts}} Resultados</div>
+  <select [(ngModel)]="displayedProducts">
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="15">15</option>
+  </select>
+</div>

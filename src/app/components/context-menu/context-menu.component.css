@@ -1,0 +1,38 @@
+.context-menu {
+    position: fixed;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.context-menu button {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    text-align: left;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .context-menu {
+        max-width: 200px; 
+    }
+
+    .context-menu button {
+        padding: 6px 10px; 
+    }
+}
+
+@media (max-width: 576px) {
+    .context-menu {
+        max-width: 150px; 
+    }
+
+    .context-menu button {
+        padding: 5px 8px; 
+    }
+}
